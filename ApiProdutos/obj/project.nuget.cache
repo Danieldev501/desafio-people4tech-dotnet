@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "kv6xb0AdF4I=",
+  "success": true,
+  "projectFilePath": "c:\\Users\\danio\\Documents\\DesafioPeople4Tech\\ApiProdutos\\ApiProdutos.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\danio\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.0\\microsoft.aspnetcore.openapi.10.0.0.nupkg.sha512",
+    "C:\\Users\\danio\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
