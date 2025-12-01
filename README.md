@@ -1,7 +1,7 @@
 dotnet run --project "C:\Users\danio\Documents\DesafioPeople4Tech\ApiProdutos\ApiProdutos.csproj" --urls "http://localhost:5000"
-# DesafioPeople4Tech - API (versão simples)
+# DesafioPeople4Tech - API 
 
-Este projeto é uma API bem básica pra gerenciar produtos e pedidos. Fiz de um jeito simples, do tipo que um iniciante faria.
+Este projeto é uma API bem básica pra gerenciar produtos e pedidos.
 
 Coisas importantes:
 - Precisa do .NET 10 SDK instalado.
@@ -49,9 +49,6 @@ Parar a API (se abriu em background)
 Get-Process -Name ApiProdutos -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.Id -Force }
 ```
 
-Notas do autor (curto e direto):
-- Code simples: dados ficam em memória, sem banco.
-- Validações mínimas, é pra mostrar funcionamento básico.
-- Se precisar, eu posso melhorar depois, mas deixei propositalmente simples.
 
-Boa sorte no teste!
+-dados ficam em memória, sem banco.
+- Validações mínimas, é pra mostrar funcionamento básico.
