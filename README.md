@@ -1,53 +1,57 @@
-# DesafioPeople4Tech - API Simples
+dotnet run --project "C:\Users\danio\Documents\DesafioPeople4Tech\ApiProdutos\ApiProdutos.csproj" --urls "http://localhost:5000"
+# DesafioPeople4Tech - API (versão simples)
 
-Este projeto é uma API mínima para gerenciar produtos e pedidos (feito em estilo simples, adequado para um candidato a estágio).
+Este projeto é uma API bem básica pra gerenciar produtos e pedidos. Fiz de um jeito simples, do tipo que um iniciante faria.
 
-Pré-requisitos
-- .NET 10 SDK instalado
-- PowerShell (Windows)
+Coisas importantes:
+- Precisa do .NET 10 SDK instalado.
+- Use PowerShell no Windows pra rodar os exemplos abaixo.
 
-Como compilar
+Como compilar (rápido)
 ```pwsh
 cd "C:\Users\danio\Documents\DesafioPeople4Tech"
 dotnet build DesafioPeople4Tech.sln
 ```
 
-Como executar (modo simples)
+Como executar (do jeito mais simples)
 ```pwsh
-# Inicia a API na porta 5000
+# abre a API na porta 5000
 dotnet run --project "C:\Users\danio\Documents\DesafioPeople4Tech\ApiProdutos\ApiProdutos.csproj" --urls "http://localhost:5000"
 ```
 
-Exemplos de teste (PowerShell)
-- Cadastrar um produto:
+Como testar (exemplos em PowerShell)
+
+- Cadastrar um produto
 ```pwsh
 $body = @{ Nome='Caneta'; Descricao='Azul'; Preco=2.5; QuantidadeEmEstoque=5 } | ConvertTo-Json
 Invoke-RestMethod -Method Post -Uri 'http://localhost:5000/api/produtos' -Body $body -ContentType 'application/json'
 ```
 
-- Listar produtos:
+- Listar produtos
 ```pwsh
 Invoke-RestMethod 'http://localhost:5000/api/produtos'
 ```
 
-- Criar pedido (produto com Id = 1):
+- Criar um pedido (supondo produto Id = 1)
 ```pwsh
 $pedido = @{ NomeCliente='João'; Itens=@(@{ ProdutoId=1; Quantidade=2 }) } | ConvertTo-Json
 Invoke-RestMethod -Method Post -Uri 'http://localhost:5000/api/pedidos' -Body $pedido -ContentType 'application/json'
 ```
 
-- Criar pedido com estoque insuficiente (espera erro 400):
+- Criar pedido com estoque insuficiente (vai dar erro)
 ```pwsh
 $pedido2 = @{ NomeCliente='Maria'; Itens=@(@{ ProdutoId=1; Quantidade=10 }) } | ConvertTo-Json
 Invoke-RestMethod -Method Post -Uri 'http://localhost:5000/api/pedidos' -Body $pedido2 -ContentType 'application/json'
 ```
 
-Parar a API iniciada em background (se necessário)
+Parar a API (se abriu em background)
 ```pwsh
-# Para processos que iniciaram com dotnet run e estão nomedados ApiProdutos
 Get-Process -Name ApiProdutos -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.Id -Force }
 ```
 
-Observações
-- O código foi mantido simples e com inicializadores básicos para strings nos modelos (estilo iniciante).
-- Caso queira que eu mantenha a API rodando enquanto eu executo mais testes automáticos, me avise.
+Notas do autor (curto e direto):
+- Code simples: dados ficam em memória, sem banco.
+- Validações mínimas, é pra mostrar funcionamento básico.
+- Se precisar, eu posso melhorar depois, mas deixei propositalmente simples.
+
+Boa sorte no teste!
