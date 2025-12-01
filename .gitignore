@@ -1,0 +1,39 @@
+# .gitignore básico para projetos .NET
+# Build folders
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# NuGet
+*.nupkg
+packages/
+
+# Visual Studio Code
+.vscode/
+
+# Secrets
+secrets.json
+
+# publish
+publish/
+
+# Rider
+*.sln.iml
