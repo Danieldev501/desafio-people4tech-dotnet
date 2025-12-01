@@ -17,7 +17,6 @@ namespace ApiProdutos.Services
 
         public Pedido Criar(Pedido pedido)
         {
-            // Verifica estoque
             foreach (var item in pedido.Itens)
             {
                 var produto = _produtoService.ObterPorId(item.ProdutoId);
@@ -27,7 +26,6 @@ namespace ApiProdutos.Services
                 }
             }
 
-            // Diminui estoque
             foreach (var item in pedido.Itens)
             {
                 _produtoService.DiminuirEstoque(item.ProdutoId, item.Quantidade);
